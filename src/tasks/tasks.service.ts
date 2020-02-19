@@ -6,46 +6,46 @@ import { UpdateTaskDTO } from './dto/update-task.dto';
 
 @Injectable()
 export class TasksService {
-  private tasks: Task[] = [];
+  // private tasks: Task[] = [];
 
-  getAllTasks(): Task[] {
-    return this.tasks;
-  }
+  // getAllTasks(): Task[] {
+  //   return this.tasks;
+  // }
 
-  getTaskById(id: string): Task {
-    const task = this.tasks.find(task => task.id === id);
+  // getTaskById(id: string): Task {
+  //   const task = this.tasks.find(task => task.id === id);
 
-    if (!task) {
-      throw new NotFoundException();
-    }
+  //   if (!task) {
+  //     throw new NotFoundException();
+  //   }
 
-    return task;
-  }
+  //   return task;
+  // }
 
-  createTask(createTaskDTO: CreateTaskDTO): Task {
-    const { title, description } = createTaskDTO;
-    const task: Task = {
-      id: uuid(),
-      title,
-      description,
-      status: TaskStatus.OPEN,
-    };
+  // createTask(createTaskDTO: CreateTaskDTO): Task {
+  //   const { title, description } = createTaskDTO;
+  //   const task: Task = {
+  //     id: uuid(),
+  //     title,
+  //     description,
+  //     status: TaskStatus.OPEN,
+  //   };
 
-    this.tasks.push(task);
-    return task;
-  }
+  //   this.tasks.push(task);
+  //   return task;
+  // }
 
-  deleteTaskById(id: string): void {
-    const foundTask = this.getTaskById(id);
+  // deleteTaskById(id: string): void {
+  //   const foundTask = this.getTaskById(id);
     
-    this.tasks = this.tasks.filter(task => task.id !== foundTask.id);
-  }
+  //   this.tasks = this.tasks.filter(task => task.id !== foundTask.id);
+  // }
 
-  updateTaskStatus(updateTaskDTO: UpdateTaskDTO): Task {
-    const { id, status } = updateTaskDTO;
-    const task = this.getTaskById(id);
-    task.status = status;
+  // updateTaskStatus(updateTaskDTO: UpdateTaskDTO): Task {
+  //   const { id, status } = updateTaskDTO;
+  //   const task = this.getTaskById(id);
+  //   task.status = status;
 
-    return task;
-  }
+  //   return task;
+  // }
 }
