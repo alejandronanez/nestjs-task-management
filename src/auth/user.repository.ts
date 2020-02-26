@@ -1,7 +1,7 @@
 import { Repository, EntityRepository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { User } from './user.entity';
-import { AuthCredentialsDTO } from './auth/auth-credentials.dto';
+import { AuthCredentialsDTO } from './dto/auth-credentials.dto';
 import {
   InternalServerErrorException,
   ConflictException,
